@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Catalogue</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="showDepartmentHeading()">
+  <div class="right-frame">
+    <h2 id="catalogueHeading">Book Catalogue</h2>
+    <table class="catalogue">
+      <thead>
+        <tr>
+          <th>Cover</th>
+          <th>Book</th>
+          <th>Author</th>
+          <th>Publisher</th>
+          <th>Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><img src="images/xmlbible.svg" alt="XML Bible cover" class="book-cover"></td>
+          <td>XML Bible</td>
+          <td>Winston</td>
+          <td>Wiley</td>
+          <td>$40.50</td>
+          <td><button class="add-cart-btn" data-name="XML Bible" data-price="40.50">Add to Cart</button></td>
+        </tr>
+        <tr>
+          <td><img src="images/ai.svg" alt="AI: A Modern Approach cover" class="book-cover"></td>
+          <td>AI: A Modern Approach</td>
+          <td>S. Russell</td>
+          <td>Prentice Hall</td>
+          <td>$63.00</td>
+          <td><button class="add-cart-btn" data-name="AI: A Modern Approach" data-price="63.00">Add to Cart</button></td>
+        </tr>
+        <tr>
+          <td><img src="images/java2.svg" alt="Java 2 cover" class="book-cover"></td>
+          <td>Java 2</td>
+          <td>Watson</td>
+          <td>BPB Publications</td>
+          <td>$35.50</td>
+          <td><button class="add-cart-btn" data-name="Java 2" data-price="35.50">Add to Cart</button></td>
+        </tr>
+        <tr>
+          <td><img src="images/html24.svg" alt="HTML in 24 Hours cover" class="book-cover"></td>
+          <td>HTML in 24 Hours</td>
+          <td>Sam Peter</td>
+          <td>Sam Publication</td>
+          <td>$50.00</td>
+          <td><button class="add-cart-btn" data-name="HTML in 24 Hours" data-price="50.00">Add to Cart</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="js/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="80" viewBox="0 0 60 80">
+  <rect width="60" height="80" rx="3" fill="#6c5ce7"/>
+  <rect x="4" y="4" width="52" height="72" rx="2" fill="none" stroke="#fff" stroke-opacity="0.5"/>
+  <text x="30" y="34" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" font-weight="bold" fill="#fff">XML</text>
+  <text x="30" y="48" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="#fff">Bible</text>
+</svg>

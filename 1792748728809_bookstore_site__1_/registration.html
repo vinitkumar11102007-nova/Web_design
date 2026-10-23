@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="right-frame">
+    <h2>Registration Page</h2>
+    <form class="form-box" action="#" method="post">
+      <div class="form-row">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-row">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" minlength="6" required>
+      </div>
+      <div class="form-row">
+        <label for="email">E-mail ID:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-row">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" maxlength="10"
+               title="Enter a 10-digit phone number" required>
+      </div>
+      <div class="form-row">
+        <span class="field-label">Sex:</span>
+        <span class="option-group">
+          <input type="radio" id="male" name="sex" value="Male" required>
+          <label for="male" class="option-label">Male</label>
+          <input type="radio" id="female" name="sex" value="Female">
+          <label for="female" class="option-label">Female</label>
+          <input type="radio" id="other" name="sex" value="Other">
+          <label for="other" class="option-label">Other</label>
+        </span>
+      </div>
+      <div class="form-row">
+        <span class="field-label">Date of Birth:</span>
+        <span class="option-group dob-group">
+          <select id="dobDay" name="dobDay" aria-label="Day" required></select>
+          <select id="dobMonth" name="dobMonth" aria-label="Month" required>
+            <option value="">Month</option>
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+          </select>
+          <select id="dobYear" name="dobYear" aria-label="Year" required></select>
+        </span>
+      </div>
+      <div class="form-row">
+        <span class="field-label">Languages known:</span>
+        <span class="option-group">
+          <input type="checkbox" id="langEnglish" name="languages" value="English">
+          <label for="langEnglish" class="option-label">English</label>
+          <input type="checkbox" id="langTelugu" name="languages" value="Telugu">
+          <label for="langTelugu" class="option-label">Telugu</label>
+          <input type="checkbox" id="langHindi" name="languages" value="Hindi">
+          <label for="langHindi" class="option-label">Hindi</label>
+          <input type="checkbox" id="langTamil" name="languages" value="Tamil">
+          <label for="langTamil" class="option-label">Tamil</label>
+        </span>
+      </div>
+      <div class="form-row">
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4"></textarea>
+      </div>
+      <div class="btn-row">
+        <button type="submit" class="btn">Submit</button>
+        <button type="reset" class="btn reset">Reset</button>
+      </div>
+    </form>
+  </div>
+  <script>
+    // Fill the Day (1-31) and Year (2015 down to 1970) select boxes.
+    function fillSelect(id, label, from, to) {
+      var sel = document.getElementById(id);
+      sel.add(new Option(label, ""));
+      var step = from <= to ? 1 : -1;
+      for (var n = from; n !== to + step; n += step) {
+        sel.add(new Option(n, n));
+      }
+    }
+    fillSelect("dobDay", "Day", 1, 31);
+    fillSelect("dobYear", "Year", 2015, 1970);
+  </script>
+</body>
+</html>
