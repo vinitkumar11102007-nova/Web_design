@@ -3,7 +3,309 @@
 <head>
   <meta charset="UTF-8">
   <title>Registration</title>
-  <link rel="stylesheet" href="css/style.css">
+  <style>
+/* BCS353 - Web Designing Workshop
+   Online Bookstore - Shared Stylesheet */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #222;
+}
+
+/* ---------- TOP FRAME ---------- */
+.top-frame {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #2b3a55;
+  color: #fff;
+  padding: 8px 16px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 12px;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 2px;
+  object-fit: cover;
+}
+
+.site-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 24px;
+  white-space: nowrap;
+}
+
+.navbar {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  margin-right: 8px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.navbar a:link    { color: #ffffff; }
+.navbar a:visited { color: #d7d7ff; }
+.navbar a:hover   { background-color: #47608a; }
+.navbar a:active  { color: #ffd35c; }
+
+/* ---------- LEFT FRAME ---------- */
+.left-frame {
+  background-color: #dfe6f0;
+  min-height: 100vh;
+  padding: 15px 10px;
+}
+
+.left-frame h3 {
+  text-align: center;
+  color: #2b3a55;
+  border-bottom: 2px solid #2b3a55;
+  padding-bottom: 8px;
+}
+
+.dept-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+}
+
+.dept-list li {
+  margin-bottom: 12px;
+}
+
+.dept-list a {
+  display: block;
+  text-align: center;
+  background-color: #2b3a55;
+  color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.dept-list a:hover {
+  background-color: #47608a;
+}
+
+/* ---------- RIGHT FRAME / GENERAL CONTENT ---------- */
+.right-frame {
+  padding: 25px;
+}
+
+.right-frame h1,
+.right-frame h2 {
+  color: #2b3a55;
+}
+
+.description-box {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+/* ---------- FORMS (Login / Registration) ---------- */
+.form-box {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 25px 30px;
+  max-width: 620px;
+  margin: 20px auto;
+}
+
+.form-row {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.form-row > label,
+.form-row > .field-label {
+  flex: 0 0 150px;
+  font-weight: 600;
+}
+
+.form-row input[type="text"],
+.form-row input[type="password"],
+.form-row input[type="email"],
+.form-row input[type="tel"],
+.form-row textarea {
+  flex: 1;
+  min-width: 0;
+  padding: 8px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form-row textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.option-group {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 14px;
+}
+
+.option-label {
+  font-weight: normal;
+}
+
+.dob-group select {
+  flex: 1;
+  min-width: 0;
+  padding: 8px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.btn-row {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 28px;
+  margin: 0 8px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 2px solid #c0392b;
+  background-color: #fff;
+  color: #c0392b;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn:hover {
+  background-color: #c0392b;
+  color: #fff;
+}
+
+.btn.reset {
+  border-color: #888;
+  color: #888;
+}
+
+.btn.reset:hover {
+  background-color: #888;
+  color: #fff;
+}
+
+/* ---------- CATALOGUE TABLE ---------- */
+table.catalogue {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+table.catalogue th,
+table.catalogue td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+table.catalogue th {
+  background-color: #2b3a55;
+  color: #fff;
+}
+
+table.catalogue tbody tr:nth-child(even) {
+  background-color: #f1f4f9;
+}
+
+.book-cover {
+  width: 60px;
+  height: 80px;
+}
+
+.add-cart-btn {
+  background-color: #f0ad4e;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+}
+
+.add-cart-btn:hover {
+  background-color: #ec971f;
+}
+
+/* ---------- CART TABLE ---------- */
+table.cart {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+table.cart th,
+table.cart td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+table.cart th {
+  background-color: #2b3a55;
+  color: #fff;
+}
+
+.total-row {
+  font-weight: bold;
+  background-color: #dfe6f0;
+}
+
+.qty-btn {
+  padding: 2px 8px;
+  cursor: pointer;
+  border: 1px solid #888;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.remove-btn {
+  color: #c0392b;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+  background: none;
+  text-decoration: underline;
+}
+
+  </style>
 </head>
 <body>
   <div class="right-frame">
@@ -94,6 +396,91 @@
     }
     fillSelect("dobDay", "Day", 1, 31);
     fillSelect("dobYear", "Year", 2015, 1970);
+  </script>
+  <script>
+    (function () {
+      var form = document.querySelector(".form-box");
+      var nameInput = document.getElementById("name");
+      var passwordInput = document.getElementById("password");
+      var emailInput = document.getElementById("email");
+      var phoneInput = document.getElementById("phone");
+
+      if (!form || !nameInput || !passwordInput || !emailInput || !phoneInput) {
+        return;
+      }
+
+      function updateNameValidity() {
+        var name = nameInput.value.trim();
+        var error = "";
+
+        if (name.length === 0) {
+          error = "Please enter your name.";
+        } else if (!/^[A-Za-z ]+$/.test(name)) {
+          error = "Name can contain letters and spaces only.";
+        } else if (name.length < 6) {
+          error = "Name must be at least 6 characters long.";
+        }
+
+        nameInput.setCustomValidity(error);
+      }
+
+      function updatePasswordValidity() {
+        var error = "";
+
+        if (passwordInput.value.length < 6) {
+          error = "Password must be at least 6 characters long.";
+        }
+
+        passwordInput.setCustomValidity(error);
+      }
+
+      function updateEmailValidity() {
+        var email = emailInput.value.trim();
+        var emailPattern = /^[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?\.)+[A-Za-z]{2,63}$/;
+        var error = "";
+
+        if (email.length === 0) {
+          error = "Please enter your e-mail address.";
+        } else if (!emailPattern.test(email)) {
+          error = "Enter a valid e-mail address, for example name@domain.com.";
+        }
+
+        emailInput.setCustomValidity(error);
+      }
+
+      function updatePhoneValidity() {
+        var error = "";
+
+        if (!/^[0-9]{10}$/.test(phoneInput.value)) {
+          error = "Phone number must contain exactly 10 digits.";
+        }
+
+        phoneInput.setCustomValidity(error);
+      }
+
+      nameInput.addEventListener("input", updateNameValidity);
+      passwordInput.addEventListener("input", updatePasswordValidity);
+      emailInput.addEventListener("input", updateEmailValidity);
+      phoneInput.addEventListener("input", updatePhoneValidity);
+      form.addEventListener("submit", function (event) {
+        updateNameValidity();
+        updatePasswordValidity();
+        updateEmailValidity();
+        updatePhoneValidity();
+
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          form.reportValidity();
+        }
+      });
+
+      form.addEventListener("reset", function () {
+        nameInput.setCustomValidity("");
+        passwordInput.setCustomValidity("");
+        emailInput.setCustomValidity("");
+        phoneInput.setCustomValidity("");
+      });
+    })();
   </script>
 </body>
 </html>
